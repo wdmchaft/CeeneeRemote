@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1731F519156AEE81009186AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1731F518156AEE81009186AB /* UIKit.framework */; };
+		1731F51B156AEE81009186AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1731F51A156AEE81009186AB /* Foundation.framework */; };
+		1731F51D156AEE81009186AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1731F51C156AEE81009186AB /* CoreGraphics.framework */; };
+		1731F523156AEE81009186AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1731F521156AEE81009186AB /* InfoPlist.strings */; };
+		1731F525156AEE81009186AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1731F524156AEE81009186AB /* main.m */; };
+		1731F529156AEE81009186AB /* CeeneeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1731F528156AEE81009186AB /* CeeneeAppDelegate.m */; };
+		1731F52C156AEE81009186AB /* CeeneeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1731F52B156AEE81009186AB /* CeeneeViewController.m */; };
+		1731F52F156AEE81009186AB /* CeeneeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1731F52D156AEE81009186AB /* CeeneeViewController_iPhone.xib */; };
+		1731F532156AEE81009186AB /* CeeneeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1731F530156AEE81009186AB /* CeeneeViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1731F514156AEE81009186AB /* iCeeNee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCeeNee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1731F518156AEE81009186AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1731F51A156AEE81009186AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1731F51C156AEE81009186AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1731F520156AEE81009186AB /* iCeeNee-Info.plist */ = {isa = PBXFileReference; path = "iCeeNee-Info.plist"; sourceTree = "<group>"; };
+		1731F522156AEE81009186AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1731F524156AEE81009186AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1731F526156AEE81009186AB /* iCeeNee-Prefix.pch */ = {isa = PBXFileReference; path = "iCeeNee-Prefix.pch"; sourceTree = "<group>"; };
+		1731F527156AEE81009186AB /* CeeneeAppDelegate.h */ = {isa = PBXFileReference; path = CeeneeAppDelegate.h; sourceTree = "<group>"; };
+		1731F528156AEE81009186AB /* CeeneeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CeeneeAppDelegate.m; sourceTree = "<group>"; };
+		1731F52A156AEE81009186AB /* CeeneeViewController.h */ = {isa = PBXFileReference; path = CeeneeViewController.h; sourceTree = "<group>"; };
+		1731F52B156AEE81009186AB /* CeeneeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CeeneeViewController.m; sourceTree = "<group>"; };
+		1731F52E156AEE81009186AB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CeeneeViewController_iPhone.xib; sourceTree = "<group>"; };
+		1731F531156AEE81009186AB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CeeneeViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1731F511156AEE81009186AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1731F519156AEE81009186AB /* UIKit.framework in Frameworks */,
+				1731F51B156AEE81009186AB /* Foundation.framework in Frameworks */,
+				1731F51D156AEE81009186AB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1731F509156AEE81009186AB = {
+			isa = PBXGroup;
+			children = (
+				1731F51E156AEE81009186AB /* iCeeNee */,
+				1731F517156AEE81009186AB /* Frameworks */,
+				1731F515156AEE81009186AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1731F515156AEE81009186AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1731F514156AEE81009186AB /* iCeeNee.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1731F517156AEE81009186AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1731F518156AEE81009186AB /* UIKit.framework */,
+				1731F51A156AEE81009186AB /* Foundation.framework */,
+				1731F51C156AEE81009186AB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1731F51E156AEE81009186AB /* iCeeNee */ = {
+			isa = PBXGroup;
+			children = (
+				1731F527156AEE81009186AB /* CeeneeAppDelegate.h */,
+				1731F528156AEE81009186AB /* CeeneeAppDelegate.m */,
+				1731F52A156AEE81009186AB /* CeeneeViewController.h */,
+				1731F52B156AEE81009186AB /* CeeneeViewController.m */,
+				1731F52D156AEE81009186AB /* CeeneeViewController_iPhone.xib */,
+				1731F530156AEE81009186AB /* CeeneeViewController_iPad.xib */,
+				1731F51F156AEE81009186AB /* Supporting Files */,
+			);
+			path = iCeeNee;
+			sourceTree = "<group>";
+		};
+		1731F51F156AEE81009186AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1731F520156AEE81009186AB /* iCeeNee-Info.plist */,
+				1731F521156AEE81009186AB /* InfoPlist.strings */,
+				1731F524156AEE81009186AB /* main.m */,
+				1731F526156AEE81009186AB /* iCeeNee-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1731F513156AEE81009186AB /* iCeeNee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1731F535156AEE81009186AB /* Build configuration list for PBXNativeTarget "iCeeNee" */;
+			buildPhases = (
+				1731F510156AEE81009186AB /* Sources */,
+				1731F511156AEE81009186AB /* Frameworks */,
+				1731F512156AEE81009186AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCeeNee;
+			productName = iCeeNee;
+			productReference = 1731F514156AEE81009186AB /* iCeeNee.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1731F50B156AEE81009186AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Ceenee;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Ceenee;
+			};
+			buildConfigurationList = 1731F50E156AEE81009186AB /* Build configuration list for PBXProject "iCeeNee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1731F509156AEE81009186AB;
+			productRefGroup = 1731F515156AEE81009186AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1731F513156AEE81009186AB /* iCeeNee */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1731F512156AEE81009186AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1731F523156AEE81009186AB /* InfoPlist.strings in Resources */,
+				1731F52F156AEE81009186AB /* CeeneeViewController_iPhone.xib in Resources */,
+				1731F532156AEE81009186AB /* CeeneeViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1731F510156AEE81009186AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1731F525156AEE81009186AB /* main.m in Sources */,
+				1731F529156AEE81009186AB /* CeeneeAppDelegate.m in Sources */,
+				1731F52C156AEE81009186AB /* CeeneeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1731F521156AEE81009186AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1731F522156AEE81009186AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1731F52D156AEE81009186AB /* CeeneeViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1731F52E156AEE81009186AB /* en */,
+			);
+			name = CeeneeViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		1731F530156AEE81009186AB /* CeeneeViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1731F531156AEE81009186AB /* en */,
+			);
+			name = CeeneeViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1731F533156AEE81009186AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1731F534156AEE81009186AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1731F536156AEE81009186AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCeeNee/iCeeNee-Prefix.pch";
+				INFOPLIST_FILE = "iCeeNee/iCeeNee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1731F537156AEE81009186AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCeeNee/iCeeNee-Prefix.pch";
+				INFOPLIST_FILE = "iCeeNee/iCeeNee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1731F50E156AEE81009186AB /* Build configuration list for PBXProject "iCeeNee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1731F533156AEE81009186AB /* Debug */,
+				1731F534156AEE81009186AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1731F535156AEE81009186AB /* Build configuration list for PBXNativeTarget "iCeeNee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1731F536156AEE81009186AB /* Debug */,
+				1731F537156AEE81009186AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1731F50B156AEE81009186AB /* Project object */;
+}
