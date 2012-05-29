@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CeeneeViewController : UIViewController
+#import "CeeneeRemote.h"
+
+@interface CeeneeViewController : UIViewController <UITextFieldDelegate> {
+    CeeneeRemote * remoter;
+}
+
+@property (copy, nonatomic) CeeneeRemote *remoter;
+@property (weak, nonatomic) NSString * lastEnteredTxt;
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
+
+
 
 @end

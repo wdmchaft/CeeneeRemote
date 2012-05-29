@@ -13,6 +13,7 @@
 @end
 
 @implementation CeeneeViewController
+@synthesize keyboardField;
 
 - (void)viewDidLoad
 {
@@ -22,6 +23,7 @@
 
 - (void)viewDidUnload
 {
+    [self setKeyboardField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
