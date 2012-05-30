@@ -16,8 +16,10 @@
 @property (copy, nonatomic) CeeneeRemote *remoter;
 @property (nonatomic) NSString * lastEnteredTxt;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
+@property (unsafe_unretained, nonatomic) IBOutlet UIProgressView *progressBar;
 
 
+- (NSArray *) discovery;
 
 
 - (IBAction)cmdConnect:(id)sender;

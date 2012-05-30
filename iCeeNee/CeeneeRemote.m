@@ -9,10 +9,8 @@
 #import "CeeneeRemote.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-
 #import <sys/types.h>
 #import <sys/socket.h>
-
 #include <fcntl.h>
 
 @implementation CeeneeRemote
