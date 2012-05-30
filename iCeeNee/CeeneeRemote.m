@@ -13,6 +13,8 @@
 #import <sys/types.h>
 #import <sys/socket.h>
 
+#include <fcntl.h>
+
 @implementation CeeneeRemote
 
 @synthesize gsocket;
@@ -162,23 +164,26 @@ Put the keycode of alpha nkey (alphabet and numeric) in the queue for processing
     NSString * ip=[self getIp];
     NSString * _ip;
     NSInteger * port = 30000;
-    NSLog(ip);
+    NSLog([@"Current IP of Device" stringByAppendingFormat:ip]);
     ip = @"192.168.0.";
-    
+    int res;
     struct timeval tv; 
-    fd_set my_set;
+    fd_set myset;
     struct sockaddr_in address;
     struct sockaddr *addr;
     long arg;
+    socklen_t lon; 
+    int valopt;
     
     int sockfd;
     int conn;  
+    BOOL retry_connect=false;
     // Create a socket
     address.sin_family = AF_INET;
     address.sin_port = htons(30000);        
     
     
-    for (int i=179; i<=194; i++) {
+    for (int i=1; i<=253; i++) {
         _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
         address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
         //NSLog(@"Start to process ip: ");
@@ -193,45 +198,59 @@ Put the keycode of alpha nkey (alphabet and numeric) in the queue for processing
         
         conn = connect(sockfd, addr, sizeof(address));    
         
-        if (conn < 0) { 
+        if (conn < 0) {
+            retry_connect = TRUE;             
             if (errno == EINPROGRESS) { 
-                tv.tv_sec = 15; 
-                tv.tv_usec = 0; 
-                FD_ZERO(&myset); 
-                FD_SET(sockfd, &myset); 
-                if (select(soc+1, NULL, &myset, NULL, &tv) > 0) { 
-                    lon = sizeof(int); 
-                    getsockopt(soc, SOL_SOCKET, SO_ERROR, (void*)(&valopt), &lon); 
-                    if (valopt) { 
-                        fprintf(stderr, "Error in connection() %d - %s\n", valopt, strerror(valopt)); 
-                        exit(0); 
+                do { 
+                    tv.tv_sec = 0; 
+                    tv.tv_usec = 300000; 
+                    FD_ZERO(&myset); 
+                    FD_SET(sockfd, &myset); 
+                    conn = select(sockfd+1, NULL, &myset, NULL, &tv); 
+                    if (conn < 0 && errno != EINTR) { 
+                        fprintf(stderr, "Error connecting %d - %s\n", errno, strerror(errno)); 
+                        retry_connect = FALSE;
+                        //exit(0); 
+                    } else if (conn > 0) { 
+                        // Socket selected for write 
+                        lon = sizeof(int); 
+                        if (getsockopt(sockfd, SOL_SOCKET, SO_ERROR, (void*)(&valopt), &lon) < 0) { 
+                            fprintf(stderr, "Error in getsockopt() %d - %s\n", errno, strerror(errno)); 
+                            retry_connect = FALSE;
+                            //exit(0); 
+                        } 
+                        // Check the value returned... 
+                        if (valopt) { 
+                            fprintf(stderr, "Error in delayed connection() %d - %s\n", valopt, strerror(valopt) 
+                                    );
+                            retry_connect = FALSE;
+                            //exit(0); 
+                        } 
+                        NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]); 
+                        break; 
                     } 
-                } 
-                else { 
-                    fprintf(stderr, "Timeout or error() %d - %s\n", valopt, strerror(valopt)); 
-                    exit(0); 
-                } 
-            } 
-            else { 
+                    else { 
+                        fprintf(stderr, "Timeout in select() - Cancelling!\n"); 
+                        retry_connect = FALSE;
+                        //exit(0); 
+                    } 
+                } while (retry_connect);   
+            } else { 
                 fprintf(stderr, "Error connecting %d - %s\n", errno, strerror(errno)); 
-                exit(0); 
-            } 
-        } 
-        // Set to blocking mode again... 
-        arg = fcntl(soc, F_GETFL, NULL); 
-        arg &= (~O_NONBLOCK); 
-        fcntl(soc, F_SETFL, arg); 
-        // I hope that is all 
-        
-        
-        if (!conn) {
-            NSLog(@"Connected to this host"); 
+                //continue;
+                //exit(0); 
+            }               
         } else {
-             NSLog(@"Could not connect to this host"); 
-                NSLog(@"%d", errno);
+            //Sucessful instantly
+            NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
         }
-        
+        // Set to blocking mode again... 
+        arg = fcntl(sockfd, F_GETFL, NULL); 
+        arg &= (~O_NONBLOCK); 
+        fcntl(sockfd, F_SETFL, arg); 
+        // I hope that is all 
         close(sockfd);
+        
         //conn = Nil;
         /*
         if ([self isPortOpen:_ip onPort:port]) {
