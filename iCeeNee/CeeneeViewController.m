@@ -59,8 +59,8 @@
 }
 
 - (IBAction)cmdConnect:(id)sender {
-    //[remoter discovery]; 
-    
+    [remoter discovery]; 
+    /*
     NSString * greeting;
     NSString * ip = @"192.168.0.187";
     
@@ -80,7 +80,7 @@
         [alert show];
         lastEnteredTxt = @"";
         [remoter press:@"info"];    
-    }
+    }*/
     
 }
 
