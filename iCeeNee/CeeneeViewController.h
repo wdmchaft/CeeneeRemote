@@ -7,16 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "CeeneeRemote.h"
 
-@interface CeeneeViewController : UIViewController <UITextFieldDelegate> {
+@interface CeeneeViewController : UIViewController  <UITextFieldDelegate> {
     CeeneeRemote * remoter;
 }
 
 @property (copy, nonatomic) CeeneeRemote *remoter;
-@property (weak, nonatomic) NSString * lastEnteredTxt;
+@property (nonatomic) NSString * lastEnteredTxt;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
+
+
+
+
+- (IBAction)cmdConnect:(id)sender;
+- (IBAction)cmdSetup:(id)sender;
+- (IBAction)cmdReturn:(id)sender;
+
 
 
 

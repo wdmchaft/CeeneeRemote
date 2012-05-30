@@ -45,12 +45,12 @@ extern NSString * const CEENEE_REMOTE_KEY_BACKWARD;
 @interface CeeneeRemote : NSObject
 {
     
-    GCDAsyncSocket * socket;
+    GCDAsyncSocket * gsocket;
     NSDictionary * keycodes;  
     NSString * keyQueue;
     
 }
-@property (retain) GCDAsyncSocket* socket;
+@property (retain) GCDAsyncSocket* gsocket;
 @property (retain) NSDictionary* keycodes;
 
 - (BOOL) open:(NSString *) ip; 
@@ -61,6 +61,8 @@ extern NSString * const CEENEE_REMOTE_KEY_BACKWARD;
 - (id) initWithDic;
 - (void) processQueue;
 - (BOOL) press:(NSString *) k; 
-- (void) discovery;
-    
+- (NSArray *) discovery;
+- (NSString *) getIp;    
+- (BOOL) isPortOpen:(NSString *) ip
+           onPort:(NSInteger *) port;
 @end
