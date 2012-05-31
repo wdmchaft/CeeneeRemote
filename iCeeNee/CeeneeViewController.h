@@ -26,7 +26,8 @@
 - (IBAction)cmdSetup:(id)sender;
 - (IBAction)cmdReturn:(id)sender;
 
-
+- (IBAction)btnAbout:(id)sender;
+- (IBAction)btnScan:(id)sender;
 
 
 @end

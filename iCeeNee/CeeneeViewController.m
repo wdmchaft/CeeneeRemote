@@ -312,4 +312,10 @@
     [remoter press:@"return"];
 }
 
+- (IBAction)btnAbout:(id)sender {
+}
+
+- (IBAction)btnScan:(id)sender {
+}
+
 @end
