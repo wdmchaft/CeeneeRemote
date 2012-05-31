@@ -71,17 +71,26 @@
 - (id) initWithDic {
     self = [super init];
     
-    NSArray *keys = [NSArray arrayWithObjects: @"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", 
-                     @"~", @"!", @"@", @"#", @"$", @"%", @"^", @"&", @"*", @"(", @")", @"-", @"_", @"+", @"=", @"[", @"]", @"{", @"}", @"|", @"\\",  @":", @";", @"\"", @"\'", @"<", @",", @">", @".", @"?", @"/", 
+    NSArray *keys = [NSArray arrayWithObjects: 
+                     @"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", 
                      
-                     @"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k", @"l", @"m", @"n", @"o", 
-                     @"p", @"q", @"r", @"s", 
-                     @"t", @"u", @"v", 
-                     @"w", @"x", @"y", @"z", 
+                     @"~", @"!", @"@", @"#", @"$", 
+                     @"%", @"^", @"&", @"*", @"(", 
+                     @")", @"-", @"_", @"+", @"=", 
+                     @"[", @"]", @"{", @"}", @"|", 
+                     @"\\",  @":", @";", @"\"", @"\'", 
+                     @"<", @",", @">", @".", @"?", 
+                     @"/", 
                      
-                     @"power", @"setup", @"eject", @"tvmode", @"mute", @"delete", 
-                     @"cap_num", @"return", @"source", 
-                     @"up", @"left", @"enter", @"down", @"right",                     
+                     @"a", @"b", @"c", @"d", @"e", 
+                     @"f", @"g", @"h", @"i", @"j", 
+                     @"k", @"l", @"m", @"n", @"o", 
+                     @"p", @"q", @"r", @"s", @"t", 
+                     @"u", @"v", @"w", @"x", @"y", @"z", 
+                     
+                     @"power", @"setup", @"eject", @"tvmode", @"mute", 
+                     @"delete", @"cap_num", @"return", @"source", 
+                     @"up", @"left", @"enter", @"down", @"right", 
                      @"info", @"home", @"menu",
                      
                      @"prev", @"play", @"next", @"title", @"rewind", @"stop", @"forward", @"repeat",
@@ -93,16 +102,25 @@
                      nil
                      ];
     
-    NSArray *objects = [NSArray arrayWithObjects: @"1,0", @"4,1" ,@"4,2" ,@"4,3" ,@"4,4" ,@"4,5" ,@"4,6" ,@"5,7" ,@"4,8" ,@"5,9",
-                       @"31,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1",  @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", @"1,1",      
+    NSArray *objects = [NSArray arrayWithObjects: 
+                       @"1,0", @"4,1" ,@"4,2" ,@"4,3" ,@"4,4" ,@"4,5" ,@"4,6" ,@"5,7" ,@"4,8" ,@"5,9",
+                       
+                       @"31,1", @"1,1", @"1,1", @"1,1", @"1,1", 
+                        @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", 
+                        @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", 
+                        @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", 
+                        @"1,1",  @"1,1", @"1,1", @"1,1", @"1,1", 
+                        @"1,1", @"1,1", @"1,1", @"1,1", @"1,1", 
+                        @"1,1",      
                         
-                        @"1,2", @"2,2", @"3,2", @"1,3", @"2,3", @"3,3", @"1,4", @"2,4", @"3,4", @"1,5", @"2,5", @"3,5", @"1,6", @"2,6", @"3,6", 
-                        @"1,7", @"2,7", @"3,7", @"4,7",
-                        @"1,8", @"2,8",@"3,8", 
-                        @"1,.119", @"2,9", @"3,9", @"4,9", 
+                        @"1,2", @"2,2", @"3,2", @"1,3", @"2,3", 
+                        @"3,3", @"1,4", @"2,4", @"3,4", @"1,5", 
+                        @"2,5", @"3,5", @"1,6", @"2,6", @"3,6", 
+                        @"1,7", @"2,7", @"3,7", @"4,7", @"1,8", 
+                        @"2,8", @"3,8", @"1,.119", @"2,9", @"3,9", @"4,9", 
                         
-                        @"1,x", @"50,e", @"1,j", @"1,T", @"1,u", @"1,c",
-                        @"1,l", @"1,E", @"1,B", 
+                        @"1,x", @"50,e", @"1,j", @"1,T", @"1,u", 
+                        @"1,c", @"1,l",  @"1,o", @"1,B", // E->o 
                         @"1,U", @"1,L", @"1,\n", @"1,D", @"1,R",
                         @"1,i", @"1,O", @"1,m",
                         
@@ -141,12 +159,18 @@ Put the keycode of alpha nkey (alphabet and numeric) in the queue for processing
     NSString * rules = [keycodes objectForKey:k];
     NSArray *array = [rules componentsSeparatedByString:@","];
     int i;
+    NSString * code = [array objectAtIndex:1];
     for (i = 0; i < [[array objectAtIndex:0] intValue]; i++)
     {       
-        NSLog([array objectAtIndex:1]);    
-        [self execute:[array objectAtIndex:1]];
-        if (@"E" == [array objectAtIndex:1]) { //Hack for genesis because genesis re-map return key themselves.
-            //[self execute:@"O"];     
+        NSLog(code);    
+        [self execute:code];
+        if ([code compare:@"o"]==NSOrderedSame) { //Hack for genesis because genesis re-map return key themselves.
+            //sleep(1);
+            NSLog(@"Run Return key for Orchid too");
+            [NSThread sleepForTimeInterval:0.5];
+            [self execute:@"E"];     
+        } else {
+            
         }
         
     }

@@ -21,7 +21,6 @@
 @property (nonatomic) NSString * lastEnteredTxt;
 @property (copy, nonatomic) NSMutableArray * deviceIp;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
-@property (unsafe_unretained, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *connectionStatusBar;
 
 
@@ -42,7 +41,6 @@
 - (IBAction)cmdFastBackward:(id)sender;
 - (IBAction)cmdFastForward:(id)sender;
 - (IBAction)cmdHome:(id)sender;
-- (IBAction)cmdReturn:(id)sender;
 
 - (IBAction)cmdArrowUp:(id)sender;
 - (IBAction)cmdArrowRight:(id)sender;

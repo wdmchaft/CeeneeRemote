@@ -20,7 +20,6 @@
 @implementation CeeneeViewController
 
 @synthesize isConnected;
-@synthesize progressBar;
 @synthesize connectionStatusBar;
 @synthesize keyboardField;
 @synthesize remoter;
@@ -32,16 +31,17 @@
     [super viewDidLoad];
     remoter = [[CeeneeRemote alloc] init]; 
     deviceIp = [[NSMutableArray alloc] init];
-    progressBar.hidden = TRUE;
+    //progressBar.hidden = TRUE;
     isConnected = FALSE;
     // Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 - (void)viewDidUnload
 {
     [self setKeyboardField:nil];
     [self setRemoter:nil];
-    [self setProgressBar:nil];
+    //[self setProgressBar:nil];
     [self setConnectionStatusBar:nil];
     [super viewDidUnload];
     
@@ -68,6 +68,24 @@
     }    
     return YES;
 }
+
+
+- (void)textDidChange:(NSNotification *) Notification {
+    NSLog(@"sa");	
+    UITextField * field = (UITextField *) [Notification object];
+    if([field isEqual:keyboardField] && [field.text length] >= 0) {
+        NSInteger textFieldLength = [field.text length];
+        
+        if ([lastEnteredTxt length]>textFieldLength) {
+            [remoter press:@"delete"];
+            return ;
+        }
+        NSString * enterdedChar = (NSString *) [field.text substringFromIndex:textFieldLength -1]; 
+        [remoter press:enterdedChar];
+        lastEnteredTxt = field.text;   
+    }    
+}
+
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex>=2) {
@@ -109,107 +127,136 @@
 }
 
 - (IBAction)cmdArrowUp:(id)sender {
+    [remoter press:@"up"];
 }
 
 - (IBAction)cmdArrowRight:(id)sender {
+    [remoter press:@"right"];
 }
 
 - (IBAction)cmdArrowDown:(id)sender {
+    [remoter press:@"down"];
 }
 
 - (IBAction)cmdArrowLeft:(id)sender {
+    [remoter press:@"left"];
 }
 
 - (IBAction)cmdOk:(id)sender {
+    [remoter press:@"enter"];
 }
 
 - (IBAction)cmdInfo:(id)sender {
+    [remoter press:@"info"];    
 }
 
 - (IBAction)cmdTimeseek:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdRev:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdPlay:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdStop:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdFwd:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdSubTitle:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdSlow:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdRepeat:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdBookmark:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdZoom:(id)sender {
+    [remoter press:@"zoom"];
 }
 
 - (IBAction)cmdSixteenNine:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdTvmode:(id)sender {
+    [remoter press:@"tvmode"];
 }
 
 - (IBAction)cmdRed:(id)sender {
+    [remoter press:@"red"];    
 }
 
 - (IBAction)cmdGreen:(id)sender {
+    [remoter press:@"green"];
 }
 
 - (IBAction)cmdYellow:(id)sender {
+    [remoter press:@"yellow"];
 }
 
 - (IBAction)cmdBlue:(id)sender {
+    [remoter press:@"blue"];
 }
 
 - (IBAction)cmdMenu:(id)sender {
+    [remoter press:@"menu"];    
 }
 
 - (IBAction)cmdDelete:(id)sender {
+    [remoter press:@"delete"];
 }
 
 - (IBAction)cmdEject:(id)sender {
+    [remoter press:@"eject"];
 }
 
 - (IBAction)cmdPower:(id)sender {
+    [remoter press:@"power"];
 }
 
 - (IBAction)cmdVolUp:(id)sender {
+    [remoter press:@"volup"];    
 }
 
 - (IBAction)cmdVolDown:(id)sender {
+    [remoter press:@"voldown"];
 }
 
 - (IBAction)cmdVolMute:(id)sender {
+    [remoter press:@"mute"];
 }
 
 - (IBAction)cmdVolAudio:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdFastBackward:(id)sender {
+    [remoter press:@"up"];
 }
 
 - (IBAction)cmdFastForward:(id)sender {
+    [remoter press:@"timeseek"];
 }
 
 - (IBAction)cmdHome:(id)sender {
+    [remoter press:@"home"];
 }
-
-- (IBAction)cmdReturn:(id)sender {
-}
-
 
 
 - (IBAction)btnAbout:(id)sender {
@@ -221,7 +268,7 @@
 
 - (IBAction)btnScan:(id)sender {
     //[self.progressBar setHidden:FALSE];
-    [progressBar setProgress:0.5];
+    //[progressBar setProgress:0.5];
     NSArray * boardIp;
     NSString * ip=[remoter getIp];
     NSString * _ip;
@@ -251,7 +298,7 @@
     address.sin_family = AF_INET;
     address.sin_port = htons(30000);        
         
-    for (int i=190; i<=199; i++) {
+    for (int i=2; i<=252; i++) {
         _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
         address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
         //NSLog(@"Start to process ip: ");
@@ -265,13 +312,13 @@
         fcntl(sockfd, F_SETFL, arg); 
         
         conn = connect(sockfd, addr, sizeof(address)); 
-        [progressBar setProgress:i/250];
+        //[progressBar setProgress:i/250];
         if (conn < 0) {
             retry_connect = TRUE;             
             if (errno == EINPROGRESS) { 
                 do { 
                     tv.tv_sec = 0; 
-                    tv.tv_usec = 300000; 
+                    tv.tv_usec = 100000; 
                     FD_ZERO(&myset); 
                     FD_SET(sockfd, &myset); 
                     conn = select(sockfd+1, NULL, &myset, NULL, &tv); 
