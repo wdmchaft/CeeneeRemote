@@ -29,6 +29,14 @@
  */
 - (IBAction)cmdSetup:(id)sender;
 - (IBAction)cmdReturn:(id)sender;
+- (IBAction)cmdVolUp:(id)sender;
+- (IBAction)cmdVolDown:(id)sender;
+- (IBAction)cmdVolMute:(id)sender;
+- (IBAction)cmdVolAudio:(id)sender;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *cmdPrevious;
+
+
+
 
 /**
  App function

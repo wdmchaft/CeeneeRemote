@@ -18,6 +18,7 @@
 @end
 
 @implementation CeeneeViewController
+@synthesize cmdPrevious;
 @synthesize progressBar;
 @synthesize keyboardField;
 @synthesize remoter;
@@ -36,6 +37,7 @@
     [self setKeyboardField:nil];
     [self setRemoter:nil];
     [self setProgressBar:nil];
+    [self setCmdPrevious:nil];
     [super viewDidUnload];
     
     // Release any retained subviews of the main view.
@@ -179,6 +181,18 @@
 
 - (IBAction)cmdReturn:(id)sender {
     [remoter press:@"return"];
+}
+
+- (IBAction)cmdVolUp:(id)sender {
+}
+
+- (IBAction)cmdVolDown:(id)sender {
+}
+
+- (IBAction)cmdVolMute:(id)sender {
+}
+
+- (IBAction)cmdVolAudio:(id)sender {
 }
 
 
