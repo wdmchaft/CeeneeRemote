@@ -70,7 +70,7 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex>=1) {
+    if (buttonIndex>=2) {
         if (isConnected) {
             isConnected =  FALSE;
             [remoter close];
@@ -85,6 +85,12 @@
         [connectionStatusBar setTitle:ip forState:UIControlStateSelected];
         [connectionStatusBar setSelected:TRUE];
         [alert show];       
+    } else if(buttonIndex==0) {
+        isConnected =  FALSE;
+        [remoter close];
+        [connectionStatusBar setSelected:FALSE];
+    } else {
+        //User press return, do nothing
     }
 }
 
@@ -155,7 +161,7 @@
     address.sin_family = AF_INET;
     address.sin_port = htons(30000);        
         
-    for (int i=2; i<=253; i++) {
+    for (int i=190; i<=199; i++) {
         _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
         address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
         //NSLog(@"Start to process ip: ");
@@ -189,6 +195,7 @@
                         if (getsockopt(sockfd, SOL_SOCKET, SO_ERROR, (void*)(&valopt), &lon) < 0) { 
                             fprintf(stderr, "Error in getsockopt() %d - %s\n", errno, strerror(errno)); 
                             retry_connect = FALSE;
+                            continue;
                             //exit(0); 
                         } 
                         // Check the value returned... 
@@ -196,13 +203,13 @@
                             fprintf(stderr, "Error in delayed connection() %d - %s\n", valopt, strerror(valopt) 
                                     );
                             retry_connect = FALSE;
+                            continue;
                             //exit(0); 
                         } 
                         NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
                         [deviceIp addObject:_ip];
                         break; 
-                    } 
-                    else { 
+                    } else { 
                         fprintf(stderr, "Timeout in select() - Cancelling!\n"); 
                         retry_connect = FALSE;
                         //exit(0); 
@@ -214,8 +221,9 @@
                 //exit(0); 
             }               
         } else {
+            //This case seems mean was able to ping IP, not really connect on the port 30000
             //Sucessful instantly
-            NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
+            //NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
             [deviceIp addObject:_ip];
         }
         // Set to blocking mode again... 
@@ -237,11 +245,11 @@
     UIActionSheet *action = [[UIActionSheet alloc]
                              initWithTitle:@"Choose a device to connect"
                              delegate:self
-                             cancelButtonTitle:@"Close"
-                             destructiveButtonTitle:@"Exit"
+                             cancelButtonTitle:@"Return"
+                             destructiveButtonTitle:@"Close Current Connection"
                              otherButtonTitles: nil
                              ];
-    action.cancelButtonIndex = 0;
+    //action.cancelButtonIndex = 0;
     for (NSString * ip in deviceIp) {
         [action addButtonWithTitle:ip];
     }
