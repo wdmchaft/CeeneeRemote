@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CeeneeRemote.h"
 
-@interface CeeneeViewController : UIViewController  <UITextFieldDelegate> {
+@interface CeeneeViewController : UIViewController  
+<UITextFieldDelegate, UIActionSheetDelegate> {
     CeeneeRemote * remoter;
 }
 
@@ -18,8 +19,10 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
 @property (unsafe_unretained, nonatomic) IBOutlet UIProgressView *progressBar;
 
-
-- (NSArray *) discovery;
+/*
+ * Interface implement
+ */
+- (void)actionSheet:(UIActionSheet *)actionSheet;
 
 /**
  Remote function
@@ -30,8 +33,11 @@
 /**
  App function
  */
+- (NSArray *) discovery;
+- (NSArray *) deviceIp;
 - (IBAction)btnAbout:(id)sender;
 - (IBAction)btnScan:(id)sender;
+- (IBAction)btnShowDevice:(id)sender;
 
 
 @end

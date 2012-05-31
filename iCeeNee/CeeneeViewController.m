@@ -50,22 +50,22 @@
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {    
     if (theTextField == self.keyboardField) {        
         [theTextField resignFirstResponder];
-        lastEnteredTxt = nil;      
-        
+        lastEnteredTxt = nil;              
     }
     
     if (theTextField == self.keyboardField) {        
         [theTextField setText:@""];
-    }
-    
+    }    
     return YES;
-    
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet
+    clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"%d", buttonIndex);
+}
 
 - (NSArray *) discovery {
     [self.progressBar setHidden:FALSE];
@@ -181,18 +181,18 @@
     [remoter press:@"return"];
 }
 
+
+
 - (IBAction)btnAbout:(id)sender {
     NSString * greeting = @"CeeNee Remote. \nIcon by http://glyphicon.com";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCeeNee information" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alert show];
-    alert = nil;
-    
-
+    //[alert release];
 }
 
 - (IBAction)btnScan:(id)sender {
     [self.progressBar setHidden:FALSE];
-    [progressBar setProgress:0.002];
+    [progressBar setProgress:0.5];
     NSArray * boardIp;
     NSString * ip=[remoter getIp];
     NSString * _ip;
@@ -214,8 +214,7 @@
     // Create a socket
     address.sin_family = AF_INET;
     address.sin_port = htons(30000);        
-    
-    
+        
     for (int i=1; i<=253; i++) {
         _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
         address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
@@ -295,7 +294,6 @@
     }
     
     
-    
     //    [self discovery]; 
     /*
      NSString * greeting;
@@ -319,6 +317,37 @@
      [remoter press:@"info"];    
      }*/
 
+}
+
+/**
+ Display UIActionSheet of a list of device IP
+ */
+- (IBAction)btnShowDevice:(id)sender {
+    NSArray *keys = [NSArray arrayWithObjects:@"192.168.0.1", @"192.168.0.3", @"192.168.0.4", @"192.168.0.113", @"192.168.0.119", @"192.168.0.235",nil
+                     ];
+    /*    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"IP Result"
+                          message:@"This is an alert view"
+                          delegate:self
+                          cancelButtonTitle:@"Connect"
+                          otherButtonTitles:nil];
+    [alert show];
+     */
+    
+    UIActionSheet *action = [[UIActionSheet alloc]
+                             initWithTitle:@"Choose a device to connect"
+                             delegate:self
+                             cancelButtonTitle:@"Close"
+                             destructiveButtonTitle:@"Exit"
+                             otherButtonTitles: nil
+                             ];
+    action.cancelButtonIndex = 0;
+    for (NSString * ip in keys) {
+        [action addButtonWithTitle:ip];
+    }
+    [action showInView:self.view];
+    
 }
 
 @end
