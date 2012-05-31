@@ -173,7 +173,24 @@
 
 }
 
-- (IBAction)cmdConnect:(id)sender {
+- (IBAction)cmdSetup:(id)sender {
+    [remoter press:@"setup"];  
+}
+
+- (IBAction)cmdReturn:(id)sender {
+    [remoter press:@"return"];
+}
+
+- (IBAction)btnAbout:(id)sender {
+    NSString * greeting = @"CeeNee Remote. \nIcon by http://glyphicon.com";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCeeNee information" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    alert = nil;
+    
+
+}
+
+- (IBAction)btnScan:(id)sender {
     [self.progressBar setHidden:FALSE];
     [progressBar setProgress:0.002];
     NSArray * boardIp;
@@ -276,46 +293,32 @@
          }*/
         
     }
-
     
     
-//    [self discovery]; 
+    
+    //    [self discovery]; 
     /*
-    NSString * greeting;
-    NSString * ip = @"192.168.0.187";
-    
-    NSString * currentTitle = (NSString *) [sender currentTitle];
-    if (@"Stop" == currentTitle) {
-        [remoter close]; 
-        [sender setTitle:@"Connect" forState:UIControlStateNormal];
-    } else {        
-        if ([remoter open:ip]) {
-            greeting = @"Succeed to connect to the host";
-            [sender setTitle:@"Stop" forState:UIControlStateNormal];
-        } else {
-            greeting = @"Fail to connect to the host";
-            
-        };
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Status" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [alert show];
-        lastEnteredTxt = @"";
-        [remoter press:@"info"];    
-    }*/
-    
-}
+     NSString * greeting;
+     NSString * ip = @"192.168.0.187";
+     
+     NSString * currentTitle = (NSString *) [sender currentTitle];
+     if (@"Stop" == currentTitle) {
+     [remoter close]; 
+     [sender setTitle:@"Connect" forState:UIControlStateNormal];
+     } else {        
+     if ([remoter open:ip]) {
+     greeting = @"Succeed to connect to the host";
+     [sender setTitle:@"Stop" forState:UIControlStateNormal];
+     } else {
+     greeting = @"Fail to connect to the host";
+     
+     };
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Status" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+     [alert show];
+     lastEnteredTxt = @"";
+     [remoter press:@"info"];    
+     }*/
 
-- (IBAction)cmdSetup:(id)sender {
-    [remoter press:@"setup"];  
-}
-
-- (IBAction)cmdReturn:(id)sender {
-    [remoter press:@"return"];
-}
-
-- (IBAction)btnAbout:(id)sender {
-}
-
-- (IBAction)btnScan:(id)sender {
 }
 
 @end

@@ -21,11 +21,15 @@
 
 - (NSArray *) discovery;
 
-
-- (IBAction)cmdConnect:(id)sender;
+/**
+ Remote function
+ */
 - (IBAction)cmdSetup:(id)sender;
 - (IBAction)cmdReturn:(id)sender;
 
+/**
+ App function
+ */
 - (IBAction)btnAbout:(id)sender;
 - (IBAction)btnScan:(id)sender;
 
