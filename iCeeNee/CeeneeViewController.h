@@ -22,6 +22,8 @@
 @property (copy, nonatomic) NSMutableArray * deviceIp;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
 @property (unsafe_unretained, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *connectionStatusBar;
+
 
 /*
  * Interface implement
