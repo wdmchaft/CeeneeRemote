@@ -74,9 +74,9 @@
         if (isConnected) {
             isConnected =  FALSE;
             [remoter close];
-            [connectionStatusBar setSelected:FALSE];
+            //[connectionStatusBar setSelected:FALSE];
         }
-        buttonIndex--;
+        buttonIndex = buttonIndex -2;
         NSString * ip = [deviceIp objectAtIndex:buttonIndex];
         NSLog([@"App will connect to the board " stringByAppendingFormat:ip]);
         [remoter open:ip];
@@ -108,6 +108,84 @@
     [remoter press:@"return"];
 }
 
+- (IBAction)cmdArrowUp:(id)sender {
+}
+
+- (IBAction)cmdArrowRight:(id)sender {
+}
+
+- (IBAction)cmdArrowDown:(id)sender {
+}
+
+- (IBAction)cmdArrowLeft:(id)sender {
+}
+
+- (IBAction)cmdOk:(id)sender {
+}
+
+- (IBAction)cmdInfo:(id)sender {
+}
+
+- (IBAction)cmdTimeseek:(id)sender {
+}
+
+- (IBAction)cmdRev:(id)sender {
+}
+
+- (IBAction)cmdPlay:(id)sender {
+}
+
+- (IBAction)cmdStop:(id)sender {
+}
+
+- (IBAction)cmdFwd:(id)sender {
+}
+
+- (IBAction)cmdSubTitle:(id)sender {
+}
+
+- (IBAction)cmdSlow:(id)sender {
+}
+
+- (IBAction)cmdRepeat:(id)sender {
+}
+
+- (IBAction)cmdBookmark:(id)sender {
+}
+
+- (IBAction)cmdZoom:(id)sender {
+}
+
+- (IBAction)cmdSixteenNine:(id)sender {
+}
+
+- (IBAction)cmdTvmode:(id)sender {
+}
+
+- (IBAction)cmdRed:(id)sender {
+}
+
+- (IBAction)cmdGreen:(id)sender {
+}
+
+- (IBAction)cmdYellow:(id)sender {
+}
+
+- (IBAction)cmdBlue:(id)sender {
+}
+
+- (IBAction)cmdMenu:(id)sender {
+}
+
+- (IBAction)cmdDelete:(id)sender {
+}
+
+- (IBAction)cmdEject:(id)sender {
+}
+
+- (IBAction)cmdPower:(id)sender {
+}
+
 - (IBAction)cmdVolUp:(id)sender {
 }
 
@@ -118,6 +196,18 @@
 }
 
 - (IBAction)cmdVolAudio:(id)sender {
+}
+
+- (IBAction)cmdFastBackward:(id)sender {
+}
+
+- (IBAction)cmdFastForward:(id)sender {
+}
+
+- (IBAction)cmdHome:(id)sender {
+}
+
+- (IBAction)cmdReturn:(id)sender {
 }
 
 
@@ -240,8 +330,6 @@
  Display UIActionSheet of a list of device IP
  */
 - (IBAction)btnShowDevice:(id)sender {
-    //deviceIp = [NSMutableArray arrayWithObjects:@"192.168.0.1", @"192.168.0.3", @"192.168.0.4", @"192.168.0.113", @"192.168.0.119", @"192.168.0.235",nil];
-    
     UIActionSheet *action = [[UIActionSheet alloc]
                              initWithTitle:@"Choose a device to connect"
                              delegate:self
