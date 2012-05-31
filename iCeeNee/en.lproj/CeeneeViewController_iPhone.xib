@@ -85,7 +85,7 @@
 						<string key="NSFrame">{{279, 45}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="575374293"/>
+						<reference key="NSNextKeyView" ref="885153663"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -788,7 +788,7 @@
 					<object class="IBUIButton" id="488650670">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{2, 383}, {36, 36}}</string>
+						<string key="NSFrame">{{5, 383}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="487557253"/>
@@ -887,7 +887,7 @@
 					<object class="IBUIButton" id="781384905">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{2, 422}, {36, 36}}</string>
+						<string key="NSFrame">{{5, 422}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="429578853"/>
@@ -981,7 +981,7 @@
 						<string key="NSFrame">{{58, 81}, {207, 9}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="929605595"/>
+						<reference key="NSNextKeyView" ref="575374293"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -993,7 +993,7 @@
 						<string key="NSFrame">{{58, 45}, {207, 34}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="885153663"/>
+						<reference key="NSNextKeyView" ref="929605595"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -1082,14 +1082,6 @@
 						<reference key="destination" ref="885153663"/>
 					</object>
 					<int key="connectionID">56</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">cmdPrevious</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="782368796"/>
-					</object>
-					<int key="connectionID">70</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -1587,15 +1579,10 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="cmdPrevious">UIButton</string>
 						<string key="keyboardField">UITextField</string>
 						<string key="progressBar">UIProgressView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="cmdPrevious">
-							<string key="name">cmdPrevious</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="keyboardField">
 							<string key="name">keyboardField</string>
 							<string key="candidateClassName">UITextField</string>

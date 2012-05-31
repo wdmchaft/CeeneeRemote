@@ -12,10 +12,14 @@
 @interface CeeneeViewController : UIViewController  
 <UITextFieldDelegate, UIActionSheetDelegate> {
     CeeneeRemote * remoter;
+    NSMutableArray * deviceIp;
+    BOOL isConnected;
 }
 
+@property BOOL isConnected;
 @property (copy, nonatomic) CeeneeRemote *remoter;
 @property (nonatomic) NSString * lastEnteredTxt;
+@property (copy, nonatomic) NSMutableArray * deviceIp;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
 @property (unsafe_unretained, nonatomic) IBOutlet UIProgressView *progressBar;
 
@@ -33,16 +37,12 @@
 - (IBAction)cmdVolDown:(id)sender;
 - (IBAction)cmdVolMute:(id)sender;
 - (IBAction)cmdVolAudio:(id)sender;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *cmdPrevious;
-
-
 
 
 /**
  App function
  */
 - (NSArray *) discovery;
-- (NSArray *) deviceIp;
 - (IBAction)btnAbout:(id)sender;
 - (IBAction)btnScan:(id)sender;
 - (IBAction)btnShowDevice:(id)sender;

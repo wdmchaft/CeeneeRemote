@@ -18,17 +18,21 @@
 @end
 
 @implementation CeeneeViewController
-@synthesize cmdPrevious;
+
+@synthesize isConnected;
 @synthesize progressBar;
 @synthesize keyboardField;
 @synthesize remoter;
 @synthesize lastEnteredTxt;
+@synthesize deviceIp;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     remoter = [[CeeneeRemote alloc] init]; 
+    deviceIp = [[NSMutableArray alloc] init];
     progressBar.hidden = TRUE;
+    isConnected = FALSE;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -37,7 +41,6 @@
     [self setKeyboardField:nil];
     [self setRemoter:nil];
     [self setProgressBar:nil];
-    [self setCmdPrevious:nil];
     [super viewDidUnload];
     
     // Release any retained subviews of the main view.
@@ -64,9 +67,33 @@
     return YES;
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet
-    clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"%d", buttonIndex);
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex>=1) {
+        buttonIndex--;
+        NSLog([@"App will connect to the board " stringByAppendingFormat:[deviceIp objectAtIndex:buttonIndex]]);
+    }
+    /*
+     NSString * greeting;
+     NSString * ip = @"192.168.0.187";
+     
+     NSString * currentTitle = (NSString *) [sender currentTitle];
+     if (@"Stop" == currentTitle) {
+     [remoter close]; 
+     [sender setTitle:@"Connect" forState:UIControlStateNormal];
+     } else {        
+     if ([remoter open:ip]) {
+     greeting = @"Succeed to connect to the host";
+     [sender setTitle:@"Stop" forState:UIControlStateNormal];
+     } else {
+     greeting = @"Fail to connect to the host";
+     
+     };
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Status" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+     [alert show];
+     lastEnteredTxt = @"";
+     [remoter press:@"info"];    
+     }*/
+    
 }
 
 - (NSArray *) discovery {
@@ -210,9 +237,16 @@
     NSArray * boardIp;
     NSString * ip=[remoter getIp];
     NSString * _ip;
+    [deviceIp removeAllObjects];
+    
+    int *tempIndex = (int)([ip rangeOfString:@"." options:NSBackwardsSearch].location);
+    
     NSInteger * port = 30000;
     NSLog([@"Current IP of Device" stringByAppendingFormat:ip]);
-    ip = @"192.168.0.";
+    //ip = @"192.168.0.";
+    ip = [ip substringToIndex:tempIndex];
+    ip = [ip stringByAppendingFormat:@"."];
+    NSLog([@"Mask IP: " stringByAppendingFormat:ip]);
     int res;
     struct timeval tv; 
     fd_set myset;
@@ -229,7 +263,7 @@
     address.sin_family = AF_INET;
     address.sin_port = htons(30000);        
         
-    for (int i=1; i<=253; i++) {
+    for (int i=2; i<=253; i++) {
         _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
         address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
         //NSLog(@"Start to process ip: ");
@@ -272,7 +306,8 @@
                             retry_connect = FALSE;
                             //exit(0); 
                         } 
-                        NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]); 
+                        NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
+                        [deviceIp addObject:_ip];
                         break; 
                     } 
                     else { 
@@ -289,6 +324,7 @@
         } else {
             //Sucessful instantly
             NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
+            [deviceIp addObject:_ip];
         }
         // Set to blocking mode again... 
         arg = fcntl(sockfd, F_GETFL, NULL); 
@@ -296,40 +332,7 @@
         fcntl(sockfd, F_SETFL, arg); 
         // I hope that is all 
         close(sockfd);
-        
-        //conn = Nil;
-        /*
-         if ([self isPortOpen:_ip onPort:port]) {
-         NSLog([@"Connected to " stringByAppendingFormat:_ip]);  
-         } else {
-         NSLog([@"Cannot connec to " stringByAppendingFormat:_ip]);
-         }*/
-        
     }
-    
-    
-    //    [self discovery]; 
-    /*
-     NSString * greeting;
-     NSString * ip = @"192.168.0.187";
-     
-     NSString * currentTitle = (NSString *) [sender currentTitle];
-     if (@"Stop" == currentTitle) {
-     [remoter close]; 
-     [sender setTitle:@"Connect" forState:UIControlStateNormal];
-     } else {        
-     if ([remoter open:ip]) {
-     greeting = @"Succeed to connect to the host";
-     [sender setTitle:@"Stop" forState:UIControlStateNormal];
-     } else {
-     greeting = @"Fail to connect to the host";
-     
-     };
-     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Status" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-     [alert show];
-     lastEnteredTxt = @"";
-     [remoter press:@"info"];    
-     }*/
 
 }
 
@@ -337,17 +340,7 @@
  Display UIActionSheet of a list of device IP
  */
 - (IBAction)btnShowDevice:(id)sender {
-    NSArray *keys = [NSArray arrayWithObjects:@"192.168.0.1", @"192.168.0.3", @"192.168.0.4", @"192.168.0.113", @"192.168.0.119", @"192.168.0.235",nil
-                     ];
-    /*    
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"IP Result"
-                          message:@"This is an alert view"
-                          delegate:self
-                          cancelButtonTitle:@"Connect"
-                          otherButtonTitles:nil];
-    [alert show];
-     */
+    //deviceIp = [NSMutableArray arrayWithObjects:@"192.168.0.1", @"192.168.0.3", @"192.168.0.4", @"192.168.0.113", @"192.168.0.119", @"192.168.0.235",nil];
     
     UIActionSheet *action = [[UIActionSheet alloc]
                              initWithTitle:@"Choose a device to connect"
@@ -357,11 +350,10 @@
                              otherButtonTitles: nil
                              ];
     action.cancelButtonIndex = 0;
-    for (NSString * ip in keys) {
+    for (NSString * ip in deviceIp) {
         [action addButtonWithTitle:ip];
     }
-    [action showInView:self.view];
-    
+    [action showInView:self.view];    
 }
 
 @end
