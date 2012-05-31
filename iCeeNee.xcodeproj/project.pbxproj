@@ -47,19 +47,18 @@
 		177BC3F91576AE7E001BBBF9 /* glyphicons_220_play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 177BC2691576AE7D001BBBF9 /* glyphicons_220_play_button.png */; };
 		177BC4641576AE7E001BBBF9 /* glyphicons_327_sampler.png in Resources */ = {isa = PBXBuildFile; fileRef = 177BC2D41576AE7D001BBBF9 /* glyphicons_327_sampler.png */; };
 		177BC47C1576AE7E001BBBF9 /* glyphicons_351_book_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 177BC2EC1576AE7D001BBBF9 /* glyphicons_351_book_open.png */; };
-		177BC4B91576C6C0001BBBF9 /* 169.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4AE1576C6C0001BBBF9 /* 169.tif */; };
-		177BC4BA1576C6C0001BBBF9 /* audio.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4AF1576C6C0001BBBF9 /* audio.tif */; };
-		177BC4BB1576C6C0001BBBF9 /* BOOKMARK.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B01576C6C0001BBBF9 /* BOOKMARK.tif */; };
-		177BC4BC1576C6C0001BBBF9 /* OK.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B11576C6C0001BBBF9 /* OK.tif */; };
-		177BC4BD1576C6C0001BBBF9 /* REPEAT.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B21576C6C0001BBBF9 /* REPEAT.tif */; };
-		177BC4BE1576C6C0001BBBF9 /* return.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B31576C6C0001BBBF9 /* return.tif */; };
-		177BC4BF1576C6C0001BBBF9 /* SETUP.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B41576C6C0001BBBF9 /* SETUP.tif */; };
-		177BC4C01576C6C0001BBBF9 /* slow.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B51576C6C0001BBBF9 /* slow.tif */; };
-		177BC4C11576C6C0001BBBF9 /* SUBTITLE.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B61576C6C0001BBBF9 /* SUBTITLE.tif */; };
-		177BC4C21576C6C0001BBBF9 /* TV-MODE.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B71576C6C0001BBBF9 /* TV-MODE.tif */; };
-		177BC4C31576C6C0001BBBF9 /* ZOOM.tif in Resources */ = {isa = PBXBuildFile; fileRef = 177BC4B81576C6C0001BBBF9 /* ZOOM.tif */; };
 		1786F4231577D5BA000A10F6 /* glyphicons_280_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4221577D5BA000A10F6 /* glyphicons_280_settings.png */; };
 		1786F4251577D611000A10F6 /* glyphicons_173_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4241577D611000A10F6 /* glyphicons_173_play.png */; };
+		1786F42F15781A50000A10F6 /* icon-remote-dvr.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F42E15781A4F000A10F6 /* icon-remote-dvr.png */; };
+		1786F4321578280A000A10F6 /* icon-remote-dvr.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4311578280A000A10F6 /* icon-remote-dvr.png */; };
+		1786F44B1578282A000A10F6 /* 169.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4431578282A000A10F6 /* 169.png */; };
+		1786F44C1578282A000A10F6 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4441578282A000A10F6 /* audio.png */; };
+		1786F44D1578282A000A10F6 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4451578282A000A10F6 /* bookmark.png */; };
+		1786F44E1578282A000A10F6 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4461578282A000A10F6 /* ok.png */; };
+		1786F44F1578282A000A10F6 /* repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4471578282A000A10F6 /* repeat.png */; };
+		1786F4501578282A000A10F6 /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4481578282A000A10F6 /* return.png */; };
+		1786F4511578282A000A10F6 /* tvmode.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4491578282A000A10F6 /* tvmode.png */; };
+		1786F4521578282A000A10F6 /* zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F44A1578282A000A10F6 /* zoom.png */; };
 		17B77C4515753D9E009C3D5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B77C4415753D9E009C3D5C /* Security.framework */; };
 		17B77C4615753DA4009C3D5C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17143AF5157537E600BA7AD6 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
@@ -113,19 +112,18 @@
 		177BC2691576AE7D001BBBF9 /* glyphicons_220_play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_220_play_button.png; sourceTree = "<group>"; };
 		177BC2D41576AE7D001BBBF9 /* glyphicons_327_sampler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_327_sampler.png; sourceTree = "<group>"; };
 		177BC2EC1576AE7D001BBBF9 /* glyphicons_351_book_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_351_book_open.png; sourceTree = "<group>"; };
-		177BC4AE1576C6C0001BBBF9 /* 169.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 169.tif; sourceTree = "<group>"; };
-		177BC4AF1576C6C0001BBBF9 /* audio.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = audio.tif; sourceTree = "<group>"; };
-		177BC4B01576C6C0001BBBF9 /* BOOKMARK.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = BOOKMARK.tif; sourceTree = "<group>"; };
-		177BC4B11576C6C0001BBBF9 /* OK.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = OK.tif; sourceTree = "<group>"; };
-		177BC4B21576C6C0001BBBF9 /* REPEAT.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = REPEAT.tif; sourceTree = "<group>"; };
-		177BC4B31576C6C0001BBBF9 /* return.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = return.tif; sourceTree = "<group>"; };
-		177BC4B41576C6C0001BBBF9 /* SETUP.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SETUP.tif; sourceTree = "<group>"; };
-		177BC4B51576C6C0001BBBF9 /* slow.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = slow.tif; sourceTree = "<group>"; };
-		177BC4B61576C6C0001BBBF9 /* SUBTITLE.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SUBTITLE.tif; sourceTree = "<group>"; };
-		177BC4B71576C6C0001BBBF9 /* TV-MODE.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "TV-MODE.tif"; sourceTree = "<group>"; };
-		177BC4B81576C6C0001BBBF9 /* ZOOM.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ZOOM.tif; sourceTree = "<group>"; };
 		1786F4221577D5BA000A10F6 /* glyphicons_280_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_280_settings.png; sourceTree = "<group>"; };
 		1786F4241577D611000A10F6 /* glyphicons_173_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_173_play.png; sourceTree = "<group>"; };
+		1786F42E15781A4F000A10F6 /* icon-remote-dvr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-remote-dvr.png"; sourceTree = "<group>"; };
+		1786F4311578280A000A10F6 /* icon-remote-dvr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-remote-dvr.png"; path = "../../../Downloads/icon-remote-dvr.png"; sourceTree = "<group>"; };
+		1786F4431578282A000A10F6 /* 169.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 169.png; sourceTree = "<group>"; };
+		1786F4441578282A000A10F6 /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
+		1786F4451578282A000A10F6 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
+		1786F4461578282A000A10F6 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		1786F4471578282A000A10F6 /* repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeat.png; sourceTree = "<group>"; };
+		1786F4481578282A000A10F6 /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = return.png; sourceTree = "<group>"; };
+		1786F4491578282A000A10F6 /* tvmode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tvmode.png; sourceTree = "<group>"; };
+		1786F44A1578282A000A10F6 /* zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoom.png; sourceTree = "<group>"; };
 		17B77C4415753D9E009C3D5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -148,6 +146,7 @@
 		1731F509156AEE81009186AB = {
 			isa = PBXGroup;
 			children = (
+				1786F42E15781A4F000A10F6 /* icon-remote-dvr.png */,
 				1731F51E156AEE81009186AB /* iCeeNee */,
 				1731F517156AEE81009186AB /* Frameworks */,
 				1731F515156AEE81009186AB /* Products */,
@@ -263,17 +262,15 @@
 		177BC4AD1576C68B001BBBF9 /* icon */ = {
 			isa = PBXGroup;
 			children = (
-				177BC4AE1576C6C0001BBBF9 /* 169.tif */,
-				177BC4AF1576C6C0001BBBF9 /* audio.tif */,
-				177BC4B01576C6C0001BBBF9 /* BOOKMARK.tif */,
-				177BC4B11576C6C0001BBBF9 /* OK.tif */,
-				177BC4B21576C6C0001BBBF9 /* REPEAT.tif */,
-				177BC4B31576C6C0001BBBF9 /* return.tif */,
-				177BC4B41576C6C0001BBBF9 /* SETUP.tif */,
-				177BC4B51576C6C0001BBBF9 /* slow.tif */,
-				177BC4B61576C6C0001BBBF9 /* SUBTITLE.tif */,
-				177BC4B71576C6C0001BBBF9 /* TV-MODE.tif */,
-				177BC4B81576C6C0001BBBF9 /* ZOOM.tif */,
+				1786F4431578282A000A10F6 /* 169.png */,
+				1786F4441578282A000A10F6 /* audio.png */,
+				1786F4451578282A000A10F6 /* bookmark.png */,
+				1786F4461578282A000A10F6 /* ok.png */,
+				1786F4471578282A000A10F6 /* repeat.png */,
+				1786F4481578282A000A10F6 /* return.png */,
+				1786F4491578282A000A10F6 /* tvmode.png */,
+				1786F44A1578282A000A10F6 /* zoom.png */,
+				1786F4311578280A000A10F6 /* icon-remote-dvr.png */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -362,19 +359,18 @@
 				177BC3F91576AE7E001BBBF9 /* glyphicons_220_play_button.png in Resources */,
 				177BC4641576AE7E001BBBF9 /* glyphicons_327_sampler.png in Resources */,
 				177BC47C1576AE7E001BBBF9 /* glyphicons_351_book_open.png in Resources */,
-				177BC4B91576C6C0001BBBF9 /* 169.tif in Resources */,
-				177BC4BA1576C6C0001BBBF9 /* audio.tif in Resources */,
-				177BC4BB1576C6C0001BBBF9 /* BOOKMARK.tif in Resources */,
-				177BC4BC1576C6C0001BBBF9 /* OK.tif in Resources */,
-				177BC4BD1576C6C0001BBBF9 /* REPEAT.tif in Resources */,
-				177BC4BE1576C6C0001BBBF9 /* return.tif in Resources */,
-				177BC4BF1576C6C0001BBBF9 /* SETUP.tif in Resources */,
-				177BC4C01576C6C0001BBBF9 /* slow.tif in Resources */,
-				177BC4C11576C6C0001BBBF9 /* SUBTITLE.tif in Resources */,
-				177BC4C21576C6C0001BBBF9 /* TV-MODE.tif in Resources */,
-				177BC4C31576C6C0001BBBF9 /* ZOOM.tif in Resources */,
 				1786F4231577D5BA000A10F6 /* glyphicons_280_settings.png in Resources */,
 				1786F4251577D611000A10F6 /* glyphicons_173_play.png in Resources */,
+				1786F42F15781A50000A10F6 /* icon-remote-dvr.png in Resources */,
+				1786F4321578280A000A10F6 /* icon-remote-dvr.png in Resources */,
+				1786F44B1578282A000A10F6 /* 169.png in Resources */,
+				1786F44C1578282A000A10F6 /* audio.png in Resources */,
+				1786F44D1578282A000A10F6 /* bookmark.png in Resources */,
+				1786F44E1578282A000A10F6 /* ok.png in Resources */,
+				1786F44F1578282A000A10F6 /* repeat.png in Resources */,
+				1786F4501578282A000A10F6 /* return.png in Resources */,
+				1786F4511578282A000A10F6 /* tvmode.png in Resources */,
+				1786F4521578282A000A10F6 /* zoom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +439,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,7 +458,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,7 +472,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCeeNee/iCeeNee-Prefix.pch";
 				INFOPLIST_FILE = "iCeeNee/iCeeNee-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,7 +486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCeeNee/iCeeNee-Prefix.pch";
 				INFOPLIST_FILE = "iCeeNee/iCeeNee-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
