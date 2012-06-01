@@ -265,6 +265,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">glyphicons_169_albums.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
@@ -454,7 +458,7 @@
 					<object class="IBUIButton" id="386630376">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{142, 210}, {36, 36}}</string>
+						<string key="NSFrame">{{140, 213}, {40, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="463200573"/>
@@ -481,7 +485,7 @@
 					<object class="IBUIButton" id="375744588">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{142, 290}, {36, 36}}</string>
+						<string key="NSFrame">{{140, 301}, {40, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="283280764"/>
@@ -508,7 +512,7 @@
 					<object class="IBUIButton" id="477625039">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{101, 250}, {36, 36}}</string>
+						<string key="NSFrame">{{97, 256}, {40, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1063780548"/>
@@ -535,7 +539,7 @@
 					<object class="IBUIButton" id="1017900240">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{183, 250}, {36, 36}}</string>
+						<string key="NSFrame">{{185, 256}, {40, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="530122262"/>
@@ -562,7 +566,7 @@
 					<object class="IBUIButton" id="1063780548">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{142, 250}, {36, 36}}</string>
+						<string key="NSFrame">{{140, 257}, {40, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1017900240"/>
@@ -615,7 +619,7 @@
 					<object class="IBUIButton" id="222418858">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{86, 305}, {36, 36}}</string>
+						<string key="NSFrame">{{84, 305}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="375744588"/>
@@ -641,7 +645,7 @@
 					<object class="IBUIButton" id="283280764">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{193, 305}, {36, 36}}</string>
+						<string key="NSFrame">{{204, 305}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="870266168"/>
@@ -719,7 +723,7 @@
 					<object class="IBUIButton" id="500990437">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{86, 344}, {36, 36}}</string>
+						<string key="NSFrame">{{84, 344}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="45360322"/>
@@ -736,13 +740,17 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_10_slow.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
 					<object class="IBUIButton" id="45360322">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{193, 344}, {36, 36}}</string>
+						<string key="NSFrame">{{204, 344}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="642029169"/>
@@ -822,7 +830,7 @@
 					<object class="IBUIButton" id="487557253">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{86, 383}, {36, 36}}</string>
+						<string key="NSFrame">{{84, 383}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="497890941"/>
@@ -849,7 +857,7 @@
 					<object class="IBUIButton" id="497890941">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{193, 383}, {36, 36}}</string>
+						<string key="NSFrame">{{204, 383}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="978743893"/>
@@ -919,13 +927,17 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_11_red.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
 					<object class="IBUIButton" id="429578853">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{86, 422}, {36, 36}}</string>
+						<string key="NSFrame">{{84, 422}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1011862200"/>
@@ -942,13 +954,17 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_14_green.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
 					<object class="IBUIButton" id="1011862200">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{193, 422}, {36, 36}}</string>
+						<string key="NSFrame">{{204, 422}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="805390230"/>
@@ -965,6 +981,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_13_yellow.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
@@ -974,6 +994,7 @@
 						<string key="NSFrame">{{263, 422}, {36, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -987,6 +1008,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_12_blue.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
@@ -2013,6 +2038,11 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="ceenee_10_slow.png">{18, 18}</string>
+			<string key="ceenee_11_red.png">{36, 36}</string>
+			<string key="ceenee_12_blue.png">{36, 36}</string>
+			<string key="ceenee_13_yellow.png">{36, 36}</string>
+			<string key="ceenee_14_green.png">{36, 36}</string>
 			<string key="glyphicons_020_home.png">{27, 26}</string>
 			<string key="glyphicons_027_search.png">{24, 24}</string>
 			<string key="glyphicons_049_star.png">{25, 24}</string>
@@ -2020,6 +2050,7 @@
 			<string key="glyphicons_073_signal.png">{31, 23}</string>
 			<string key="glyphicons_085_repeat.png">{24, 26}</string>
 			<string key="glyphicons_100_font.png">{27, 23}</string>
+			<string key="glyphicons_169_albums.png">{28, 18}</string>
 			<string key="glyphicons_171_fast_backward.png">{25, 18}</string>
 			<string key="glyphicons_172_rewind.png">{23, 18}</string>
 			<string key="glyphicons_173_play.png">{16, 18}</string>
