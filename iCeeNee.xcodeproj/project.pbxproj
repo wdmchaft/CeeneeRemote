@@ -18,6 +18,15 @@
 		1731F532156AEE81009186AB /* CeeneeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1731F530156AEE81009186AB /* CeeneeViewController_iPad.xib */; };
 		1731F54D156E9A6A009186AB /* CeeneeRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1731F54C156E9A6A009186AB /* CeeneeRemote.m */; };
 		1731F551156E9AC3009186AB /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1731F550156E9AC3009186AB /* GCDAsyncSocket.m */; };
+		1742294415792085003F7C3B /* glyphicons_349_fullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1742294315792085003F7C3B /* glyphicons_349_fullscreen.png */; };
+		17422947157920D8003F7C3B /* glyphicons_049_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 17422946157920D8003F7C3B /* glyphicons_049_star.png */; };
+		174229491579215B003F7C3B /* glyphicons_279_tablet.png in Resources */ = {isa = PBXBuildFile; fileRef = 174229481579215B003F7C3B /* glyphicons_279_tablet.png */; };
+		1742294B157921D9003F7C3B /* glyphicons_221_unshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 1742294A157921D9003F7C3B /* glyphicons_221_unshare.png */; };
+		1742295215792EC5003F7C3B /* ceenee_10_slow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1742294D15792EC5003F7C3B /* ceenee_10_slow.png */; };
+		1742295315792EC5003F7C3B /* ceenee_11_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1742294E15792EC5003F7C3B /* ceenee_11_red.png */; };
+		1742295415792EC5003F7C3B /* ceenee_12_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1742294F15792EC5003F7C3B /* ceenee_12_green.png */; };
+		1742295515792EC5003F7C3B /* ceenee_13_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1742295015792EC5003F7C3B /* ceenee_13_yellow.png */; };
+		1742295615792EC5003F7C3B /* ceenee_14_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1742295115792EC5003F7C3B /* ceenee_14_blue.png */; };
 		177BC3311576AE7E001BBBF9 /* glyphicons_020_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 177BC1A11576AE7D001BBBF9 /* glyphicons_020_home.png */; };
 		177BC3381576AE7E001BBBF9 /* glyphicons_027_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 177BC1A81576AE7D001BBBF9 /* glyphicons_027_search.png */; };
 		177BC35C1576AE7E001BBBF9 /* glyphicons_063_power.png in Resources */ = {isa = PBXBuildFile; fileRef = 177BC1CC1576AE7D001BBBF9 /* glyphicons_063_power.png */; };
@@ -51,14 +60,12 @@
 		1786F4251577D611000A10F6 /* glyphicons_173_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4241577D611000A10F6 /* glyphicons_173_play.png */; };
 		1786F42F15781A50000A10F6 /* icon-remote-dvr.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F42E15781A4F000A10F6 /* icon-remote-dvr.png */; };
 		1786F4321578280A000A10F6 /* icon-remote-dvr.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4311578280A000A10F6 /* icon-remote-dvr.png */; };
-		1786F44B1578282A000A10F6 /* 169.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4431578282A000A10F6 /* 169.png */; };
-		1786F44C1578282A000A10F6 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4441578282A000A10F6 /* audio.png */; };
-		1786F44D1578282A000A10F6 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4451578282A000A10F6 /* bookmark.png */; };
-		1786F44E1578282A000A10F6 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4461578282A000A10F6 /* ok.png */; };
-		1786F44F1578282A000A10F6 /* repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4471578282A000A10F6 /* repeat.png */; };
-		1786F4501578282A000A10F6 /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4481578282A000A10F6 /* return.png */; };
-		1786F4511578282A000A10F6 /* tvmode.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F4491578282A000A10F6 /* tvmode.png */; };
-		1786F4521578282A000A10F6 /* zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F44A1578282A000A10F6 /* zoom.png */; };
+		1786F45D15782978000A10F6 /* ceenee_3_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F45515782978000A10F6 /* ceenee_3_ok.png */; };
+		1786F45E15782978000A10F6 /* ceenee_4_repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F45615782978000A10F6 /* ceenee_4_repeat.png */; };
+		1786F45F15782978000A10F6 /* ceenee_5_return.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F45715782978000A10F6 /* ceenee_5_return.png */; };
+		1786F46015782978000A10F6 /* ceenee_6_tvmode.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F45815782978000A10F6 /* ceenee_6_tvmode.png */; };
+		1786F46115782978000A10F6 /* ceenee_6_zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F45915782978000A10F6 /* ceenee_6_zoom.png */; };
+		1786F46215782978000A10F6 /* ceenee_7_169.png in Resources */ = {isa = PBXBuildFile; fileRef = 1786F45A15782978000A10F6 /* ceenee_7_169.png */; };
 		17B77C4515753D9E009C3D5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B77C4415753D9E009C3D5C /* Security.framework */; };
 		17B77C4615753DA4009C3D5C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17143AF5157537E600BA7AD6 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +90,15 @@
 		1731F54C156E9A6A009186AB /* CeeneeRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CeeneeRemote.m; sourceTree = "<group>"; };
 		1731F54F156E9AC3009186AB /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		1731F550156E9AC3009186AB /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		1742294315792085003F7C3B /* glyphicons_349_fullscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_349_fullscreen.png; sourceTree = "<group>"; };
+		17422946157920D8003F7C3B /* glyphicons_049_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_049_star.png; sourceTree = "<group>"; };
+		174229481579215B003F7C3B /* glyphicons_279_tablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_279_tablet.png; sourceTree = "<group>"; };
+		1742294A157921D9003F7C3B /* glyphicons_221_unshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_221_unshare.png; sourceTree = "<group>"; };
+		1742294D15792EC5003F7C3B /* ceenee_10_slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ceenee_10_slow.png; path = tmp_icon/ceenee_10_slow.png; sourceTree = "<group>"; };
+		1742294E15792EC5003F7C3B /* ceenee_11_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ceenee_11_red.png; path = tmp_icon/ceenee_11_red.png; sourceTree = "<group>"; };
+		1742294F15792EC5003F7C3B /* ceenee_12_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ceenee_12_green.png; path = tmp_icon/ceenee_12_green.png; sourceTree = "<group>"; };
+		1742295015792EC5003F7C3B /* ceenee_13_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ceenee_13_yellow.png; path = tmp_icon/ceenee_13_yellow.png; sourceTree = "<group>"; };
+		1742295115792EC5003F7C3B /* ceenee_14_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ceenee_14_blue.png; path = tmp_icon/ceenee_14_blue.png; sourceTree = "<group>"; };
 		177BC1A11576AE7D001BBBF9 /* glyphicons_020_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_020_home.png; sourceTree = "<group>"; };
 		177BC1A81576AE7D001BBBF9 /* glyphicons_027_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_027_search.png; sourceTree = "<group>"; };
 		177BC1CC1576AE7D001BBBF9 /* glyphicons_063_power.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_063_power.png; sourceTree = "<group>"; };
@@ -116,14 +132,12 @@
 		1786F4241577D611000A10F6 /* glyphicons_173_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_173_play.png; sourceTree = "<group>"; };
 		1786F42E15781A4F000A10F6 /* icon-remote-dvr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-remote-dvr.png"; sourceTree = "<group>"; };
 		1786F4311578280A000A10F6 /* icon-remote-dvr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-remote-dvr.png"; path = "../../../Downloads/icon-remote-dvr.png"; sourceTree = "<group>"; };
-		1786F4431578282A000A10F6 /* 169.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 169.png; sourceTree = "<group>"; };
-		1786F4441578282A000A10F6 /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
-		1786F4451578282A000A10F6 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
-		1786F4461578282A000A10F6 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
-		1786F4471578282A000A10F6 /* repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeat.png; sourceTree = "<group>"; };
-		1786F4481578282A000A10F6 /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = return.png; sourceTree = "<group>"; };
-		1786F4491578282A000A10F6 /* tvmode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tvmode.png; sourceTree = "<group>"; };
-		1786F44A1578282A000A10F6 /* zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoom.png; sourceTree = "<group>"; };
+		1786F45515782978000A10F6 /* ceenee_3_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceenee_3_ok.png; sourceTree = "<group>"; };
+		1786F45615782978000A10F6 /* ceenee_4_repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceenee_4_repeat.png; sourceTree = "<group>"; };
+		1786F45715782978000A10F6 /* ceenee_5_return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceenee_5_return.png; sourceTree = "<group>"; };
+		1786F45815782978000A10F6 /* ceenee_6_tvmode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceenee_6_tvmode.png; sourceTree = "<group>"; };
+		1786F45915782978000A10F6 /* ceenee_6_zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceenee_6_zoom.png; sourceTree = "<group>"; };
+		1786F45A15782978000A10F6 /* ceenee_7_169.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceenee_7_169.png; sourceTree = "<group>"; };
 		17B77C4415753D9E009C3D5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -223,6 +237,10 @@
 		177BC18C1576AE7D001BBBF9 /* glyph */ = {
 			isa = PBXGroup;
 			children = (
+				1742294A157921D9003F7C3B /* glyphicons_221_unshare.png */,
+				174229481579215B003F7C3B /* glyphicons_279_tablet.png */,
+				17422946157920D8003F7C3B /* glyphicons_049_star.png */,
+				1742294315792085003F7C3B /* glyphicons_349_fullscreen.png */,
 				177BC1A11576AE7D001BBBF9 /* glyphicons_020_home.png */,
 				177BC1A81576AE7D001BBBF9 /* glyphicons_027_search.png */,
 				177BC1CC1576AE7D001BBBF9 /* glyphicons_063_power.png */,
@@ -262,14 +280,17 @@
 		177BC4AD1576C68B001BBBF9 /* icon */ = {
 			isa = PBXGroup;
 			children = (
-				1786F4431578282A000A10F6 /* 169.png */,
-				1786F4441578282A000A10F6 /* audio.png */,
-				1786F4451578282A000A10F6 /* bookmark.png */,
-				1786F4461578282A000A10F6 /* ok.png */,
-				1786F4471578282A000A10F6 /* repeat.png */,
-				1786F4481578282A000A10F6 /* return.png */,
-				1786F4491578282A000A10F6 /* tvmode.png */,
-				1786F44A1578282A000A10F6 /* zoom.png */,
+				1742294D15792EC5003F7C3B /* ceenee_10_slow.png */,
+				1742294E15792EC5003F7C3B /* ceenee_11_red.png */,
+				1742294F15792EC5003F7C3B /* ceenee_12_green.png */,
+				1742295015792EC5003F7C3B /* ceenee_13_yellow.png */,
+				1742295115792EC5003F7C3B /* ceenee_14_blue.png */,
+				1786F45515782978000A10F6 /* ceenee_3_ok.png */,
+				1786F45615782978000A10F6 /* ceenee_4_repeat.png */,
+				1786F45715782978000A10F6 /* ceenee_5_return.png */,
+				1786F45815782978000A10F6 /* ceenee_6_tvmode.png */,
+				1786F45915782978000A10F6 /* ceenee_6_zoom.png */,
+				1786F45A15782978000A10F6 /* ceenee_7_169.png */,
 				1786F4311578280A000A10F6 /* icon-remote-dvr.png */,
 			);
 			name = icon;
@@ -363,14 +384,21 @@
 				1786F4251577D611000A10F6 /* glyphicons_173_play.png in Resources */,
 				1786F42F15781A50000A10F6 /* icon-remote-dvr.png in Resources */,
 				1786F4321578280A000A10F6 /* icon-remote-dvr.png in Resources */,
-				1786F44B1578282A000A10F6 /* 169.png in Resources */,
-				1786F44C1578282A000A10F6 /* audio.png in Resources */,
-				1786F44D1578282A000A10F6 /* bookmark.png in Resources */,
-				1786F44E1578282A000A10F6 /* ok.png in Resources */,
-				1786F44F1578282A000A10F6 /* repeat.png in Resources */,
-				1786F4501578282A000A10F6 /* return.png in Resources */,
-				1786F4511578282A000A10F6 /* tvmode.png in Resources */,
-				1786F4521578282A000A10F6 /* zoom.png in Resources */,
+				1786F45D15782978000A10F6 /* ceenee_3_ok.png in Resources */,
+				1786F45E15782978000A10F6 /* ceenee_4_repeat.png in Resources */,
+				1786F45F15782978000A10F6 /* ceenee_5_return.png in Resources */,
+				1786F46015782978000A10F6 /* ceenee_6_tvmode.png in Resources */,
+				1786F46115782978000A10F6 /* ceenee_6_zoom.png in Resources */,
+				1786F46215782978000A10F6 /* ceenee_7_169.png in Resources */,
+				1742294415792085003F7C3B /* glyphicons_349_fullscreen.png in Resources */,
+				17422947157920D8003F7C3B /* glyphicons_049_star.png in Resources */,
+				174229491579215B003F7C3B /* glyphicons_279_tablet.png in Resources */,
+				1742294B157921D9003F7C3B /* glyphicons_221_unshare.png in Resources */,
+				1742295215792EC5003F7C3B /* ceenee_10_slow.png in Resources */,
+				1742295315792EC5003F7C3B /* ceenee_11_red.png in Resources */,
+				1742295415792EC5003F7C3B /* ceenee_12_green.png in Resources */,
+				1742295515792EC5003F7C3B /* ceenee_13_yellow.png in Resources */,
+				1742295615792EC5003F7C3B /* ceenee_14_blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +500,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCeeNee/iCeeNee-Prefix.pch";
 				INFOPLIST_FILE = "iCeeNee/iCeeNee-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,7 +514,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCeeNee/iCeeNee-Prefix.pch";
 				INFOPLIST_FILE = "iCeeNee/iCeeNee-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
