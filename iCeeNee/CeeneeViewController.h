@@ -22,7 +22,7 @@
 @property (copy, nonatomic) NSMutableArray * deviceIp;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *connectionStatusBar;
-
+@property (unsafe_unretained, nonatomic) IBOutlet UIBarButtonItem *barItemScan;
 
 /*
  * Interface implement
@@ -78,10 +78,11 @@
 
 
 
+
 /**
  App function
  */
-- (NSArray *) discovery;
+- (void) discovery;
 - (IBAction)btnAbout:(id)sender;
 - (IBAction)btnScan:(id)sender;
 - (IBAction)btnShowDevice:(id)sender;

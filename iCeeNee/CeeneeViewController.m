@@ -18,6 +18,7 @@
 @end
 
 @implementation CeeneeViewController
+@synthesize barItemScan;
 
 @synthesize isConnected;
 @synthesize connectionStatusBar;
@@ -43,6 +44,7 @@
     [self setRemoter:nil];
     //[self setProgressBar:nil];
     [self setConnectionStatusBar:nil];
+    [self setBarItemScan:nil];
     [super viewDidUnload];
     
     // Release any retained subviews of the main view.
@@ -112,10 +114,114 @@
     }
 }
 
-- (NSArray *) discovery {
-    NSArray * ip;
-    return ip;
+- (void) discovery {
+    NSString * _ip;    
+    NSArray * boardIp;
+    NSString * ip=[remoter getIp];
+    [deviceIp removeAllObjects];
     
+    int *tempIndex = (int)([ip rangeOfString:@"." options:NSBackwardsSearch].location);
+    
+    NSInteger * port = 30000;
+    NSLog([@"Current IP of Device" stringByAppendingFormat:ip]);
+    //ip = @"192.168.0.";
+    ip = [ip substringToIndex:tempIndex];
+    ip = [ip stringByAppendingFormat:@"."];
+    NSLog([@"Mask IP: " stringByAppendingFormat:ip]);
+    int res;
+    struct timeval tv; 
+    fd_set myset;
+    struct sockaddr_in address;
+    struct sockaddr *addr;
+    long arg;
+    socklen_t lon; 
+    int valopt;
+    
+    int sockfd;
+    int conn;  
+    BOOL retry_connect=false;
+    // Create a socket
+    address.sin_family = AF_INET;
+    address.sin_port = htons(30000);        
+    
+    for (int i=2; i<=252; i++) {
+        _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
+        address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
+        //NSLog(@"Start to process ip: ");
+        NSLog(_ip);
+        addr = (struct sockaddr*)&address;
+        sockfd = socket(AF_INET, SOCK_STREAM, 0);   
+        
+        // Set non-blocking 
+        arg = fcntl(sockfd, F_GETFL, NULL); 
+        arg |= O_NONBLOCK; 
+        fcntl(sockfd, F_SETFL, arg); 
+        
+        conn = connect(sockfd, addr, sizeof(address)); 
+        [barItemScan setTitle:[NSString stringWithFormat:@"Scan %d/250",i]];
+        if (conn < 0) {
+            retry_connect = TRUE;             
+            if (errno == EINPROGRESS) { 
+                do { 
+                    tv.tv_sec = 0; 
+                    tv.tv_usec = 100000; 
+                    FD_ZERO(&myset); 
+                    FD_SET(sockfd, &myset); 
+                    conn = select(sockfd+1, NULL, &myset, NULL, &tv); 
+                    if (conn < 0 && errno != EINTR) { 
+                        fprintf(stderr, "Error connecting %d - %s\n", errno, strerror(errno)); 
+                        retry_connect = FALSE;
+                        //exit(0); 
+                    } else if (conn > 0) { 
+                        // Socket selected for write 
+                        lon = sizeof(int); 
+                        if (getsockopt(sockfd, SOL_SOCKET, SO_ERROR, (void*)(&valopt), &lon) < 0) { 
+                            fprintf(stderr, "Error in getsockopt() %d - %s\n", errno, strerror(errno)); 
+                            retry_connect = FALSE;
+                            continue;
+                            //exit(0); 
+                        } 
+                        // Check the value returned... 
+                        if (valopt) { 
+                            fprintf(stderr, "Error in delayed connection() %d - %s\n", valopt, strerror(valopt) 
+                                    );
+                            retry_connect = FALSE;
+                            continue;
+                            //exit(0); 
+                        } 
+                        NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
+                        [deviceIp addObject:_ip];
+                        break; 
+                    } else { 
+                        fprintf(stderr, "Timeout in select() - Cancelling!\n"); 
+                        retry_connect = FALSE;
+                        //exit(0); 
+                    } 
+                } while (retry_connect);   
+            } else { 
+                fprintf(stderr, "Error connecting %d - %s\n", errno, strerror(errno)); 
+                //continue;
+                //exit(0); 
+            }               
+        } else {
+            //This case seems mean was able to ping IP, not really connect on the port 30000
+            //Sucessful instantly
+            //NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
+            [deviceIp addObject:_ip];
+        }
+        // Set to blocking mode again... 
+        arg = fcntl(sockfd, F_GETFL, NULL); 
+        arg &= (~O_NONBLOCK); 
+        fcntl(sockfd, F_SETFL, arg); 
+        // I hope that is all 
+        close(sockfd);
+
+    }
+    barItemScan.title = @"Re-scan";
+    NSString * greeting = @"Scan completed";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCeeNee information" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+
 }
 
 - (IBAction)cmdSetup:(id)sender {
@@ -155,35 +261,35 @@
 }
 
 - (IBAction)cmdRev:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"rewind"];
 }
 
 - (IBAction)cmdPlay:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"play"];
 }
 
 - (IBAction)cmdStop:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"stop"];
 }
 
 - (IBAction)cmdFwd:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"forward"];
 }
 
 - (IBAction)cmdSubTitle:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"title"];
 }
 
 - (IBAction)cmdSlow:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"slow"];
 }
 
 - (IBAction)cmdRepeat:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"repeat"];
 }
 
 - (IBAction)cmdBookmark:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"bookmark"];
 }
 
 - (IBAction)cmdZoom:(id)sender {
@@ -243,15 +349,15 @@
 }
 
 - (IBAction)cmdVolAudio:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"audio"];
 }
 
 - (IBAction)cmdFastBackward:(id)sender {
-    [remoter press:@"up"];
+    [remoter press:@"prev"];
 }
 
 - (IBAction)cmdFastForward:(id)sender {
-    [remoter press:@"timeseek"];
+    [remoter press:@"next"];
 }
 
 - (IBAction)cmdHome:(id)sender {
@@ -260,117 +366,15 @@
 
 
 - (IBAction)btnAbout:(id)sender {
-    NSString * greeting = @"CeeNee Remote. \nIcon by http://glyphicon.com";
+    NSString * greeting = @"CeeNee Remote by http://CeeNee.Com.\nIcon by http://glyphicon.com";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCeeNee information" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alert show];
     //[alert release];
 }
 
 - (IBAction)btnScan:(id)sender {
-    //[self.progressBar setHidden:FALSE];
-    //[progressBar setProgress:0.5];
-    NSArray * boardIp;
-    NSString * ip=[remoter getIp];
-    NSString * _ip;
-    [deviceIp removeAllObjects];
-    
-    int *tempIndex = (int)([ip rangeOfString:@"." options:NSBackwardsSearch].location);
-    
-    NSInteger * port = 30000;
-    NSLog([@"Current IP of Device" stringByAppendingFormat:ip]);
-    //ip = @"192.168.0.";
-    ip = [ip substringToIndex:tempIndex];
-    ip = [ip stringByAppendingFormat:@"."];
-    NSLog([@"Mask IP: " stringByAppendingFormat:ip]);
-    int res;
-    struct timeval tv; 
-    fd_set myset;
-    struct sockaddr_in address;
-    struct sockaddr *addr;
-    long arg;
-    socklen_t lon; 
-    int valopt;
-    
-    int sockfd;
-    int conn;  
-    BOOL retry_connect=false;
-    // Create a socket
-    address.sin_family = AF_INET;
-    address.sin_port = htons(30000);        
-        
-    for (int i=2; i<=252; i++) {
-        _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
-        address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
-        //NSLog(@"Start to process ip: ");
-        NSLog(_ip);
-        addr = (struct sockaddr*)&address;
-        sockfd = socket(AF_INET, SOCK_STREAM, 0);   
-        
-        // Set non-blocking 
-        arg = fcntl(sockfd, F_GETFL, NULL); 
-        arg |= O_NONBLOCK; 
-        fcntl(sockfd, F_SETFL, arg); 
-        
-        conn = connect(sockfd, addr, sizeof(address)); 
-        //[progressBar setProgress:i/250];
-        if (conn < 0) {
-            retry_connect = TRUE;             
-            if (errno == EINPROGRESS) { 
-                do { 
-                    tv.tv_sec = 0; 
-                    tv.tv_usec = 100000; 
-                    FD_ZERO(&myset); 
-                    FD_SET(sockfd, &myset); 
-                    conn = select(sockfd+1, NULL, &myset, NULL, &tv); 
-                    if (conn < 0 && errno != EINTR) { 
-                        fprintf(stderr, "Error connecting %d - %s\n", errno, strerror(errno)); 
-                        retry_connect = FALSE;
-                        //exit(0); 
-                    } else if (conn > 0) { 
-                        // Socket selected for write 
-                        lon = sizeof(int); 
-                        if (getsockopt(sockfd, SOL_SOCKET, SO_ERROR, (void*)(&valopt), &lon) < 0) { 
-                            fprintf(stderr, "Error in getsockopt() %d - %s\n", errno, strerror(errno)); 
-                            retry_connect = FALSE;
-                            continue;
-                            //exit(0); 
-                        } 
-                        // Check the value returned... 
-                        if (valopt) { 
-                            fprintf(stderr, "Error in delayed connection() %d - %s\n", valopt, strerror(valopt) 
-                                    );
-                            retry_connect = FALSE;
-                            continue;
-                            //exit(0); 
-                        } 
-                        NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
-                        [deviceIp addObject:_ip];
-                        break; 
-                    } else { 
-                        fprintf(stderr, "Timeout in select() - Cancelling!\n"); 
-                        retry_connect = FALSE;
-                        //exit(0); 
-                    } 
-                } while (retry_connect);   
-            } else { 
-                fprintf(stderr, "Error connecting %d - %s\n", errno, strerror(errno)); 
-                //continue;
-                //exit(0); 
-            }               
-        } else {
-            //This case seems mean was able to ping IP, not really connect on the port 30000
-            //Sucessful instantly
-            //NSLog([@"Connected to IP: " stringByAppendingFormat:_ip]);
-            [deviceIp addObject:_ip];
-        }
-        // Set to blocking mode again... 
-        arg = fcntl(sockfd, F_GETFL, NULL); 
-        arg &= (~O_NONBLOCK); 
-        fcntl(sockfd, F_SETFL, arg); 
-        // I hope that is all 
-        close(sockfd);
-    }
-
+    [self performSelector:@selector(discovery) withObject:nil afterDelay:0.001f];
+    [barItemScan setTitle:@"Scanning"];
 }
 
 /**

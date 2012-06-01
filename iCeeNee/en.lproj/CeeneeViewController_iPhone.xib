@@ -418,6 +418,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_5_return.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
@@ -781,6 +785,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_2_bookmark.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
@@ -804,6 +812,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_6_zoom.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
@@ -827,6 +839,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">ceenee_7_169.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
 					</object>
@@ -1018,6 +1034,10 @@
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
 									<reference key="IBUINavigationItem" ref="435234321"/>
+									<object class="NSColor" key="IBUITintColor">
+										<int key="NSColorSpace">1</int>
+										<bytes key="NSRGB">MC4yMTcwNjUzMTAzIDAuNzUgMC4wNzk0MjI0NzkzMQA</bytes>
+									</object>
 								</object>
 								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="162361948">
 									<string key="IBUITitle">About</string>
@@ -1069,6 +1089,14 @@
 						<reference key="destination" ref="490094223"/>
 					</object>
 					<int key="connectionID">106</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">barItemScan</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="832025424"/>
+					</object>
+					<int key="connectionID">107</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -1749,7 +1777,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">106</int>
+			<int key="maxID">107</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1951,10 +1979,15 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="barItemScan">UIBarButtonItem</string>
 						<string key="connectionStatusBar">UIButton</string>
 						<string key="keyboardField">UITextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="barItemScan">
+							<string key="name">barItemScan</string>
+							<string key="candidateClassName">UIBarButtonItem</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="connectionStatusBar">
 							<string key="name">connectionStatusBar</string>
 							<string key="candidateClassName">UIButton</string>
@@ -1980,6 +2013,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="ceenee_2_bookmark.png">{92, 55}</string>
+			<string key="ceenee_5_return.png">{85, 85}</string>
+			<string key="ceenee_6_zoom.png">{92, 55}</string>
+			<string key="ceenee_7_169.png">{92, 55}</string>
 			<string key="glyphicons_020_home.png">{27, 26}</string>
 			<string key="glyphicons_027_search.png">{24, 24}</string>
 			<string key="glyphicons_063_power.png">{22, 24}</string>
