@@ -420,7 +420,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">ceenee_5_return.png</string>
+							<string key="NSResourceName">glyphicons_221_unshare.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
@@ -787,7 +787,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">ceenee_2_bookmark.png</string>
+							<string key="NSResourceName">glyphicons_049_star.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
@@ -814,7 +814,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">ceenee_6_zoom.png</string>
+							<string key="NSResourceName">glyphicons_349_fullscreen.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
@@ -841,7 +841,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="248837977"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">ceenee_7_169.png</string>
+							<string key="NSResourceName">glyphicons_279_tablet.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="917978843"/>
 						<reference key="IBUIFont" ref="1061404055"/>
@@ -2013,12 +2013,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="ceenee_2_bookmark.png">{92, 55}</string>
-			<string key="ceenee_5_return.png">{85, 85}</string>
-			<string key="ceenee_6_zoom.png">{92, 55}</string>
-			<string key="ceenee_7_169.png">{92, 55}</string>
 			<string key="glyphicons_020_home.png">{27, 26}</string>
 			<string key="glyphicons_027_search.png">{24, 24}</string>
+			<string key="glyphicons_049_star.png">{25, 24}</string>
 			<string key="glyphicons_063_power.png">{22, 24}</string>
 			<string key="glyphicons_073_signal.png">{31, 23}</string>
 			<string key="glyphicons_085_repeat.png">{24, 26}</string>
@@ -2041,7 +2038,10 @@
 			<string key="glyphicons_217_circle_arrow_right.png">{26, 26}</string>
 			<string key="glyphicons_218_circle_arrow_top.png">{26, 26}</string>
 			<string key="glyphicons_219_circle_arrow_down.png">{26, 26}</string>
+			<string key="glyphicons_221_unshare.png">{24, 18}</string>
+			<string key="glyphicons_279_tablet.png">{25, 25}</string>
 			<string key="glyphicons_280_settings.png">{24, 24}</string>
+			<string key="glyphicons_349_fullscreen.png">{24, 24}</string>
 			<string key="glyphicons_351_book_open.png">{25, 23}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
