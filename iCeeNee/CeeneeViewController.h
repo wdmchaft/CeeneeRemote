@@ -23,6 +23,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *keyboardField;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *connectionStatusBar;
 @property (unsafe_unretained, nonatomic) IBOutlet UIBarButtonItem *barItemScan;
+@property (unsafe_unretained, nonatomic) IBOutlet UIActivityIndicatorView *progressBar;
 
 /*
  * Interface implement

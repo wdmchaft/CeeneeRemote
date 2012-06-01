@@ -19,6 +19,7 @@
 
 @implementation CeeneeViewController
 @synthesize barItemScan;
+@synthesize progressBar;
 
 @synthesize isConnected;
 @synthesize connectionStatusBar;
@@ -45,6 +46,7 @@
     //[self setProgressBar:nil];
     [self setConnectionStatusBar:nil];
     [self setBarItemScan:nil];
+    [self setProgressBar:nil];
     [super viewDidUnload];
     
     // Release any retained subviews of the main view.
@@ -83,6 +85,7 @@
             return ;
         }
         NSString * enterdedChar = (NSString *) [field.text substringFromIndex:textFieldLength -1]; 
+        [NSThread sleepForTimeInterval:0.5];
         [remoter press:enterdedChar];
         lastEnteredTxt = field.text;   
     }    
@@ -118,6 +121,15 @@
     NSString * _ip;    
     NSArray * boardIp;
     NSString * ip=[remoter getIp];
+    if ([ip compare:@"invalid address"]==NSOrderedSame || [ip compare:@"error"]==NSOrderedSame) {
+        NSString * greeting = @"Cannot scan network. Double check your connection";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCeeNee information" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        [progressBar stopAnimating];
+        [connectionStatusBar setHidden:FALSE];
+        return;
+    }
+    
     [deviceIp removeAllObjects];
     
     int *tempIndex = (int)([ip rangeOfString:@"." options:NSBackwardsSearch].location);
@@ -125,6 +137,9 @@
     NSInteger * port = 30000;
     NSLog([@"Current IP of Device" stringByAppendingFormat:ip]);
     //ip = @"192.168.0.";
+    if (!tempIndex) {
+        
+    }
     ip = [ip substringToIndex:tempIndex];
     ip = [ip stringByAppendingFormat:@"."];
     NSLog([@"Mask IP: " stringByAppendingFormat:ip]);
@@ -144,7 +159,7 @@
     address.sin_family = AF_INET;
     address.sin_port = htons(30000);        
     
-    for (int i=2; i<=252; i++) {
+    for (int i=95; i<=210; i++) {
         _ip = [ip stringByAppendingFormat:[NSString stringWithFormat:@"%d", i]];
         address.sin_addr.s_addr = inet_addr([_ip UTF8String]);        
         //NSLog(@"Start to process ip: ");
@@ -164,7 +179,8 @@
             if (errno == EINPROGRESS) { 
                 do { 
                     tv.tv_sec = 0; 
-                    tv.tv_usec = 100000; 
+                    tv.tv_usec = 500000; 
+                    
                     FD_ZERO(&myset); 
                     FD_SET(sockfd, &myset); 
                     conn = select(sockfd+1, NULL, &myset, NULL, &tv); 
@@ -217,11 +233,14 @@
         close(sockfd);
 
     }
-    barItemScan.title = @"Re-scan";
+    
+    barItemScan.title = @"Re-scan";    
+    [progressBar stopAnimating];
+    [connectionStatusBar setHidden:FALSE];
+    
     NSString * greeting = @"Scan completed";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCeeNee information" message:greeting delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alert show];
-
 }
 
 - (IBAction)cmdSetup:(id)sender {
@@ -375,6 +394,8 @@
 - (IBAction)btnScan:(id)sender {
     [self performSelector:@selector(discovery) withObject:nil afterDelay:0.001f];
     [barItemScan setTitle:@"Scanning"];
+    [progressBar startAnimating];
+    [connectionStatusBar setHidden:TRUE];
 }
 
 /**
